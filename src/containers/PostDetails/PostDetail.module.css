@@ -1,0 +1,43 @@
+.post-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    background-color: #f0f0f0;
+    padding: 10px 30px;
+    border-radius: 10px;
+  }
+  
+  .post-card img {
+    grid-row: 1 / span 4;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .post-card h1 {
+    margin: 0;
+    font-size: 3.5em;
+  }
+  
+  .post-card p {
+    margin: 0;
+    font-size: 1.2em;
+    text-align: justify;
+  }
+  
+  .post-card .icon {
+    color: #f5c518;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .post-card {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .post-card img {
+      margin-bottom: 10px;
+    }
+  }
+  

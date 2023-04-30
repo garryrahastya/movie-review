@@ -26,31 +26,37 @@ function PostDetail() {
 
   return (
     <div className={style["post-card"]}>
-      {!selectedPost && <div>
-        <h1>Page Not found...</h1>
-        <p>Redirect to homepage in 5 seconds...</p>
-        </div>}
+      {!selectedPost && (
+        <div>
+          <h1>Page Not found...</h1>
+          <p>Redirect to homepage in 5 seconds...</p>
+        </div>
+      )}
       {selectedPost && (
         <>
-          <img src={selectedPost?.image} alt="movieimg" />
-          <div>
-            <h1>{selectedPost?.movieName}</h1>
-            <p>
-              <strong>Released: </strong> {selectedPost?.releaseYear}
-            </p>
-            <br />
-            <p>
-              <strong>Review Description:</strong>
-            </p>
-            <p> {selectedPost?.review}</p>
-            <br />
-            <p>
-              <strong>Rating:</strong> {selectedPost?.rating}
-              <FontAwesomeIcon icon={faStar} className={style.icon} />
-            </p>
-            <p>
-              <strong>Post Created At:</strong> {selectedPost?.createdAt}
-            </p>
+          <div
+            className={style["post-image"]}
+            style={{ backgroundImage: `url(${selectedPost.image})` }}
+          >
+            <div className={style["post-details"]}>
+              <h1>{selectedPost?.movieName}</h1>
+              <p>
+                <strong>Released: </strong> {selectedPost?.releaseYear}
+              </p>
+              <br />
+              <p>
+                <strong>Review Description:</strong>
+              </p>
+              <p> {selectedPost?.review}</p>
+              <br />
+              <p>
+                <strong>Rating:</strong> {selectedPost?.rating}
+                <FontAwesomeIcon icon={faStar} className={style.icon} />
+              </p>
+              <p>
+                <strong>Post Created At:</strong> {selectedPost?.createdAt}
+              </p>
+            </div>
           </div>
         </>
       )}

@@ -57,7 +57,7 @@ const Homepage = () => {
           ))}
         </div>
       ) : (
-        <p>No movies found.</p>
+        <p>No movies found. Create a movie review by clicking <strong>Create Post</strong>.</p>
       )}
     </div>
   );
